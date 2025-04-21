@@ -22,22 +22,26 @@ export const TourDetails = () => {
         <StyledImageBlock>
           <StyledImage src={tour.url} alt={tour.title} />
         </StyledImageBlock>
-        <p>
-          <StyledSpan>Title: </StyledSpan>
-          {tour.title}
-        </p>
-        <p>
-          <StyledSpan>Price: </StyledSpan>
-          {tour.price}$
-        </p>
-        <StyledDescription>
-          <StyledSpan>Description: </StyledSpan>
-          {tour.description}
-        </StyledDescription>
-        <p>
-          <StyledSpan>Date: </StyledSpan>
-          {new Date(tour.date).toLocaleDateString("ru-RU")}
-        </p>
+        <BlockDataTour>
+          <div>
+            <p>
+              <StyledSpan>Title: </StyledSpan>
+              {tour.title}
+            </p>
+            <p>
+              <StyledSpan>Price: </StyledSpan>
+              {tour.price}$
+            </p>
+            <StyledDescription>
+              <StyledSpan>Description: </StyledSpan>
+              {tour.description}
+            </StyledDescription>
+            <p>
+              <StyledSpan>Date: </StyledSpan>
+              {new Date(tour.date).toLocaleDateString("ru-RU")}
+            </p>
+          </div>
+        </BlockDataTour>
       </StyledBlockDetails>
       <StyledBackBtn onClick={() => navigate("/")}>← Назад</StyledBackBtn>
     </>
@@ -45,12 +49,25 @@ export const TourDetails = () => {
 };
 const StyledBlockDetails = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 0px 30px;
 `;
 const StyledImageBlock = styled.div`
   width: 300px;
-  height: 200px;
+  height: auto;
+  flex-grow: 1.5;
+`;
+const BlockDataTour = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 10px 0px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 `;
 const StyledImage = styled.img`
   width: 100%;
@@ -69,7 +86,7 @@ const StyledDescription = styled.p`
   text-align: justify;
 `;
 const StyledBackBtn = styled.button`
- width: 100px;
+  width: 100px;
   height: 30px;
   position: fixed;
   bottom: 20px;
