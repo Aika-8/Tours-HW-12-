@@ -1,0 +1,8 @@
+export const TOUR_APP_TYPES = {
+  TITLE: "TITLE",
+  URL: "URL",
+  PRICE: "PRICE",
+  DATE: "DATE",
+  DESCRIPTION: "DESCRIPTION",
+  RESET: "RESET"
+};
