@@ -24,6 +24,12 @@ const StyledLi = styled.li`
   list-style: none;
   padding-bottom: 20px;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 const StyledImageBlock = styled.div`
   width: 300px;
@@ -34,13 +40,14 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   image-rendering: pixelated;
+  border-radius: 8px;
 `;
 const ContainerBtn = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20%
+  gap: 20%;
 `;
 const StyledButton = styled.button`
   width: 100px;
